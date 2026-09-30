@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student DFA Validator</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="header-content">
+
+            <div class="college-name">
+
+                <h1>ASHOKA</h1>
+
+                <p>WOMEN'S ENGINEERING COLLEGE</p>
+
+                <small>(AUTONOMOUS)</small>
+
+            </div>
+
+
+            <div class="portal-title">
+
+                <h2>STUDENT PORTAL</h2>
+
+                <p>Email & Password Validator</p>
+
+                <small>
+                    Deterministic Finite Automata Based Validation
+                </small>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main>
+
+
+        <!-- LOGIN CARD -->
+
+        <section class="card">
+
+            <h2>👤 Student Login & Validation</h2>
+
+
+            <div class="input-group">
+
+
+                <!-- EMAIL -->
+
+                <div>
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="text"
+                        id="email"
+                        placeholder="Enter your college email"
+                    >
+
+                </div>
+
+
+
+                <!-- PASSWORD -->
+
+                <div>
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                    >
+
+                </div>
+
+
+            </div>
+
+
+
+            <button onclick="validateInput()">
+                VALIDATE
+            </button>
+
+
+        </section>
+
+
+
+        <!-- ================= RESULT ================= -->
+
+        <section class="card">
+
+            <h2>Validation Result</h2>
+
+
+            <div id="result">
+
+                Enter your email and password,
+                then click VALIDATE.
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= DFA INFORMATION ================= -->
+
+        <section class="card">
+
+            <h2>ℹ️ DFA Information</h2>
+
+
+            <div class="dfa-info">
+
+
+                <div>
+
+                    <strong>
+                        Initial State
+                    </strong>
+
+                    <p>q0</p>
+
+                </div>
+
+
+
+                <div>
+
+                    <strong>
+                        Accepting State
+                    </strong>
+
+                    <p>q18</p>
+
+                </div>
+
+
+
+                <div>
+
+                    <strong>
+                        Target Domain
+                    </strong>
+
+                    <p>ashokacollege.in</p>
+
+                </div>
+
+
+
+                <div>
+
+                    <strong>
+                        Time Complexity
+                    </strong>
+
+                    <p>O(n)</p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= DFA DIAGRAM ================= -->
+
+        <section class="card">
+
+            <h2>🔗 DFA State Diagram</h2>
+
+
+            <div class="state-diagram">
+
+
+                <div>
+
+                    <span>q0</span>
+
+                    <small>Letter / Digit</small>
+
+                </div>
+
+
+                →
+
+
+                <div>
+
+                    <span>q1</span>
+
+                    <small>Letter / Digit</small>
+
+                </div>
+
+
+                →
+
+
+                <div>
+
+                    <span>q2</span>
+
+                    <small>@</small>
+
+                </div>
+
+
+                →
+
+
+                <div>
+
+                    <span>q3</span>
+
+                    <small>a</small>
+
+                </div>
+
+
+                →
+
+
+                <div>
+
+                    <span>q4</span>
+
+                    <small>s</small>
+
+                </div>
+
+
+                →
+
+
+                <div>
+
+                    <span>...</span>
+
+                    <small>...</small>
+
+                </div>
+
+
+                →
+
+
+                <div>
+
+                    <span class="accept">
+                        q18
+                    </span>
+
+                    <small>n</small>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= TRANSITION TABLE ================= -->
+
+        <section class="card">
+
+            <h2>📋 DFA Transition Table</h2>
+
+
+            <table>
+
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Current State
+                        </th>
+
+                        <th>
+                            Input Character
+                        </th>
+
+                        <th>
+                            Next State
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+
+                    <tr>
+
+                        <td>q0</td>
+
+                        <td>Letter / Digit</td>
+
+                        <td>q1</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>q1</td>
+
+                        <td>Letter / Digit</td>
+
+                        <td>q1</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>q1</td>
+
+                        <td>@</td>
+
+                        <td>q2</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>q2</td>
+
+                        <td>a</td>
+
+                        <td>q3</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>q3</td>
+
+                        <td>s</td>
+
+                        <td>q4</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>q4</td>
+
+                        <td>h</td>
+
+                        <td>q5</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>q5</td>
+
+                        <td>o</td>
+
+                        <td>q6</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>q6</td>
+
+                        <td>k</td>
+
+                        <td>q7</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>q7</td>
+
+                        <td>a</td>
+
+                        <td>q8</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>q8</td>
+
+                        <td>c</td>
+
+                        <td>q9</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>q9</td>
+
+                        <td>o</td>
+
+                        <td>q10</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>q10</td>
+
+                        <td>l</td>
+
+                        <td>q11</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>q11</td>
+
+                        <td>l</td>
+
+                        <td>q12</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>q12</td>
+
+                        <td>e</td>
+
+                        <td>q13</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>q13</td>
+
+                        <td>g</td>
+
+                        <td>q14</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>q14</td>
+
+                        <td>e</td>
+
+                        <td>q15</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>q15</td>
+
+                        <td>.</td>
+
+                        <td>q16</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>q16</td>
+
+                        <td>i</td>
+
+                        <td>q17</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>q17</td>
+
+                        <td>n</td>
+
+                        <td>q18</td>
+
+                    </tr>
+
+
+                </tbody>
+
+
+            </table>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+
+            ASHOKA WOMEN'S ENGINEERING COLLEGE
+
+            |
+
+            ATCD Mini Project
+
+            |
+
+            DFA Based Validation
+
+        </p>
+
+    </footer>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>s
